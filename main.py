@@ -11,7 +11,7 @@ async def run():
     async with session.get('https://raw.githubusercontent.com/ow0x/owo-cogs/main/pokebase/data/template.webp') as response:
         baseimg = await response.read()
     baseimg = BytesIO(baseimg)
-    for id in range(905,915):
+    for id in range(1,906):
         
         base_image = Image.open(baseimg).convert("RGBA")
         #base_image.save('output/base_img.png')
@@ -53,7 +53,7 @@ async def run():
 
         temp = BytesIO()
         
-        base_image.save(f'images/hidden/{id}.png')
+        base_image.save(f'images/revealed/{id}.png')
         
         temp.seek(0)
         
