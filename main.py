@@ -38,7 +38,7 @@ async def run():
         poke_width, poke_height = poke_image.size
         poke_image_resized = poke_image.resize((int(poke_width * 1.6), int(poke_height * 1.6)))
 
-        if True:
+        if False:
             p_load = poke_image_resized.load()
             for y in range(poke_image_resized.size[1]):
                 for x in range(poke_image_resized.size[0]):
