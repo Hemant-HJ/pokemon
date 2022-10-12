@@ -1,4 +1,3 @@
-#!eval ```py
 from PIL import Image
 from io import BytesIO
 import aiohttp
@@ -12,7 +11,7 @@ async def run():
     async with session.get('https://raw.githubusercontent.com/ow0x/owo-cogs/main/pokebase/data/template.webp') as response:
         baseimg = await response.read()
     baseimg = BytesIO(baseimg)
-    for id in range(12,301):
+    for id in range(905,915):
         
         base_image = Image.open(baseimg).convert("RGBA")
         #base_image.save('output/base_img.png')
@@ -54,7 +53,7 @@ async def run():
 
         temp = BytesIO()
         
-        base_image.save(f'wtp_hidden/{id}.png')
+        base_image.save(f'images/hidden/{id}.png')
         
         temp.seek(0)
         
@@ -66,4 +65,3 @@ async def run():
         
 asyncio.run(run())
 print('Done')
-#```
