@@ -12,7 +12,7 @@ async def run():
         baseimg = await response.read()
     baseimg = BytesIO(baseimg)
 
-    for id in range(0):
+    for id in range(1,916):
         
         base_image = Image.open(baseimg).convert("RGBA")
         #base_image.save('output/base_img.png')
@@ -39,14 +39,14 @@ async def run():
         poke_width, poke_height = poke_image.size
         poke_image_resized = poke_image.resize((int(poke_width * 1.6), int(poke_height * 1.6)))
 
-        if False:
-            p_load = poke_image_resized.load()
-            for y in range(poke_image_resized.size[1]):
-                for x in range(poke_image_resized.size[0]):
-                    if p_load[x, y] == (0, 0, 0, 0):  # type: ignore
-                        continue
-                    else:
-                        p_load[x, y] = (1, 1, 1)  # type: ignore
+        # if False:
+        #     p_load = poke_image_resized.load()
+        #     for y in range(poke_image_resized.size[1]):
+        #         for x in range(poke_image_resized.size[0]):
+        #             if p_load[x, y] == (0, 0, 0, 0):  # type: ignore
+        #                 continue
+        #             else:
+        #                 p_load[x, y] = (1, 1, 1)  # type: ignore
         
         paste_w = int((bg_width - poke_width) / 10)
         paste_h = int((bg_height - poke_height) / 4)
